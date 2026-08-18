@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>606</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ATM : SelfMade</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #eef3f8;
+}
+
+QPushButton {
+    background-color: #1976d2;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+QPushButton:hover {
+    background-color: #1565c0;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 2px solid #90caf9;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+
+QGroupBox {
+    color: #333333;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+QGroupBox::title {
+    color: #333333;
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 20px;
+    padding: 0 5px;
+}
+
+QLineEdit {
+	color: black;
+}
+
+QLineEdit : : placeholder {
+	color: #888888;
+}
+
+QMessageBox QLabel {
+	color: white;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>580</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page_login">
+     <widget class="QFrame" name="frame_login">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>691</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_atmTitle_login">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>40</y>
+         <width>183</width>
+         <height>90</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bell MT</family>
+         <pointsize>48</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    color: #263238;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>ATM</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_login">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>150</y>
+         <width>331</width>
+         <height>268</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>Login</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+       </property>
+       <widget class="QWidget" name="gridLayoutWidget_login">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>311</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_login">
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEdit_username">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="placeholderText">
+            <string>Enter Username</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_usernameLabel">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: #263238;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Username:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_pinLabel">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: #263238;
+}</string>
+           </property>
+           <property name="text">
+            <string>PIN:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_pin">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::EchoMode::Password</enum>
+           </property>
+           <property name="placeholderText">
+            <string>Enter PIN</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QPushButton" name="pushButton_login">
+           <property name="text">
+            <string>Login</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_menu">
+     <widget class="QLabel" name="label_atmTitle_menu">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>10</y>
+        <width>183</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bell MT</family>
+        <pointsize>48</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    color: #263238;
+}</string>
+      </property>
+      <property name="text">
+       <string>ATM</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_logout">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>28</y>
+        <width>90</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Log Out</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_menu">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>190</y>
+        <width>741</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QGroupBox" name="groupBox_menu">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>721</width>
+         <height>321</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="title">
+        <string>Please Select Your Transaction</string>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget_menu">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>39</y>
+          <width>701</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_menu">
+         <item>
+          <widget class="QLabel" name="label_balance">
+           <property name="font">
+            <font>
+             <pointsize>17</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: #263238;
+}</string>
+           </property>
+           <property name="text">
+            <string>₹ XXXXX</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_checkBalance">
+           <property name="text">
+            <string>Check Balance</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_deposit">
+           <property name="text">
+            <string>Deposit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_withdraw">
+           <property name="text">
+            <string>Withdraw</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_changePin">
+           <property name="text">
+            <string>Change PIN</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_exit">
+           <property name="text">
+            <string>Exit</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_menu">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>100</y>
+        <width>511</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_menu">
+       <item>
+        <widget class="QLabel" name="label_enterAmount">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: #263238;
+}
+</string>
+         </property>
+         <property name="text">
+          <string> Enter Amount:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_amount">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="placeholderText">
+          <string>Enter Amount to Deposit/Withdraw</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <zorder>frame_menu</zorder>
+     <zorder>label_atmTitle_menu</zorder>
+     <zorder>pushButton_logout</zorder>
+     <zorder>horizontalLayoutWidget_menu</zorder>
+    </widget>
+    <widget class="QWidget" name="page_pin">
+     <widget class="QPushButton" name="pushButton_pinReturn">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>470</y>
+        <width>90</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Return </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_atmTitle_pin">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>20</y>
+        <width>183</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bell MT</family>
+        <pointsize>48</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    color: #263238;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>ATM</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_pin">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>130</y>
+        <width>611</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>0</y>
+         <width>571</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>Change PIN</string>
+       </property>
+       <widget class="QWidget" name="gridLayoutWidget_pin">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>30</y>
+          <width>471</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_pin">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_newPinLabel">
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: #263238;
+}</string>
+           </property>
+           <property name="text">
+            <string> Enter New PIN: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEdit_oldPin">
+           <property name="placeholderText">
+            <string>Enter OLD PIN</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_newPin">
+           <property name="echoMode">
+            <enum>QLineEdit::EchoMode::Password</enum>
+           </property>
+           <property name="placeholderText">
+            <string>Enter NEW PIN</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_oldPinLabel">
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: #263238;
+}</string>
+           </property>
+           <property name="text">
+            <string> Enter Old PIN: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QPushButton" name="pushButton_setNewPin">
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Set New PIN</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <zorder>frame_pin</zorder>
+     <zorder>pushButton_pinReturn</zorder>
+     <zorder>label_atmTitle_pin</zorder>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
