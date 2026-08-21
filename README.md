@@ -17,13 +17,12 @@ The application simulates a basic ATM interface with login, balance check, depos
 
 ## OOP Concepts Demonstrated
 
-| Concept | Where it's used |
-|---|---|
-| **Encapsulation** | Account data (`username`, `balance`, `pin`) is encapsulated inside the `Account` class rather than scattered across the UI code. |
-| **Class & Static Members** | `Account` uses `static` members so account data persists across the app as a single shared record, without needing to instantiate objects. |
-| **Separation of Concerns** | `Account` (data/model) is kept separate from `MainWindow` (UI/controller), following a basic MVC-like structure. |
-| **Abstraction** | The UI layer (`MainWindow`) interacts with account operations (balance, pin, deposit, withdraw) without knowing implementation details. |
-| **Header/Implementation Separation** | Each class is split into a `.h` (interface) and `.cpp` (implementation) file, a core C++ OOP practice. |
+ This project uses some basic C++ concepts: 
+- Classes and objects 
+- Encapsulation 
+- Functions 
+- Conditional statements 
+- Static data members 
 
 ## Project Structure
 
