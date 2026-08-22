@@ -1,102 +1,85 @@
-# ATM Banking System (Qt / C++)
+# ATM Banking System
+A basic ATM Banking System made using C++ and Qt Creator as a mini project for learning Object-Oriented Programming.
 
-A simple desktop ATM simulator built with **Qt Widgets** and **C++17**, created as a mini project to demonstrate core **Object-Oriented Programming (OOP)** concepts in C++.
-
-## Overview
-
-The application simulates a basic ATM interface with login, balance check, deposit, withdrawal, and PIN-change functionality, all driven by a single `Account` class and a `QStackedWidget`-based UI.
+## About the Project
+This project is a simple GUI-based ATM application. It allows the user to log in and perform basic banking operations through buttons.
+The project was made using Qt Widgets and C++17.
 
 ## Features
 
-- **Login** — Authenticate using a username and PIN.
-- **Check Balance** — View the current account balance.
-- **Deposit** — Add funds to the account (with input validation).
-- **Withdraw** — Remove funds, with checks for invalid amounts and insufficient balance.
-- **Change PIN** — Update the PIN after verifying the old one.
-- **Logout / Exit** — Return to the login screen or quit the app (with a confirmation prompt).
+* Login using username and PIN
+* Check account balance
+* Deposit money
+* Withdraw money
+* Change PIN
+* Logout
+* Exit the application
 
-## OOP Concepts Demonstrated
+## OOP Concepts Used
 
- This project uses some basic C++ concepts: 
-- Classes and objects 
-- Encapsulation 
-- Functions 
-- Conditional statements 
-- Static data members 
+* Classes and Objects
+* Encapsulation
+* Functions
+* Conditional Statements
+* Static Data Members
 
-## Project Structure
+## Project Files
 
-```
+```text
 ATM/
-├── ATM.pro            # Qt project file
-├── main.cpp            # Application entry point
-├── account.h            # Account class declaration
-├── account.cpp           # Account class definition (static members)
-├── mainwindow.h          # MainWindow class declaration
-├── mainwindow.cpp         # MainWindow class definition (UI logic/slots)
-└── mainwindow.ui          # Qt Designer UI layout (login, menu, PIN pages)
+├── ATM.pro
+├── main.cpp
+├── account.h
+├── account.cpp
+├── mainwindow.h
+├── mainwindow.cpp
+└── mainwindow.ui
+
 ```
 
-## Class Reference
+## File Description
 
-### `Account`
-Represents the bank account data (static, single-account model).
+* `ATM.pro` – Qt qmake project file
+* `main.cpp` – Starts the application
+* `account.h` – Contains the Account class
+* `account.cpp` – Contains the Account class implementation
+* `mainwindow.h` – Main window class declaration
+* `mainwindow.cpp` – Handles the application logic
+* `mainwindow.ui` – User interface created using Qt Designer
 
-| Member | Type | Description |
-|---|---|---|
-| `username` | `QString` | Static account username |
-| `balance` | `float` | Static current balance |
-| `pin` | `QString` | Static account PIN |
-
-### `MainWindow`
-Handles the UI and user interactions via Qt's `QStackedWidget` (login page, menu page, change-PIN page).
-
-Key slots:
-- `on_pushButton_login_clicked()`
-- `on_pushButton_checkBalance_clicked()`
-- `on_pushButton_deposit_clicked()`
-- `on_pushButton_withdraw_clicked()`
-- `on_pushButton_changePin_clicked()` / `on_pushButton_setNewPin_clicked()` / `on_pushButton_pinReturn_clicked()`
-- `on_pushButton_logout_clicked()`
-- `on_pushButton_exit_clicked()`
-
-## Default Credentials
-
-| Field | Value |
-|---|---|
-| Username | `nirmay` |
-| PIN | `1234` |
-| Starting Balance | ₹50,000.00 |
+## Default Login
+Username: `nirmay`
+PIN: `1234`
+Starting Balance: ₹50,000
 
 ## Requirements
 
-- Qt 5 or Qt 6 (Qt Widgets module)
-- A C++17-compatible compiler
-- Qt Creator (recommended) or `qmake` + `make`
+* Qt Creator
+* Qt 5 or Qt 6
+* C++17 compiler
 
-## Build & Run
+## How to Run
 
-### Using Qt Creator
-1. Open `ATM.pro` in Qt Creator.
-2. Select a configured kit.
-3. Build and run (`Ctrl+R`).
+1. Open Qt Creator.
+2. Open the `ATM.pro` file.
+3. Select a suitable Qt kit.
+4. Build the project.
+5. Run the application.
 
-### Using the command line
-```bash
-qmake ATM.pro
-make
-./ATM
-```
+## Limitations
+This is a basic educational project, so it currently uses a single account and the account data is reset when the application is restarted.
 
-## Possible Improvements
+## Future Improvements
+Some possible improvements are:
 
-- Support multiple accounts (replace static members with per-instance objects).
-- Persist account data to a file or database instead of resetting on restart.
-- Add transaction history logging.
-- Hash/encrypt the PIN instead of storing it as plain text.
-- Add input validation for the PIN change form (e.g., numeric-only, fixed length).
+* Add support for multiple accounts
+* Store account information permanently
+* Add transaction history
+* Improve PIN security
+* Add more ATM features
 
-## License
+## Purpose
+This project was created as an OOP mini project to understand how classes, objects, functions, encapsulation and static data members can be used in a GUI application.
 
-This project is intended for educational purposes as a demonstration of OOP principles in C++/Qt.
-
+## Author
+Nirmay Tripathi
